@@ -94,7 +94,7 @@ Pike/
 
 ## Standard Library Coverage
 
-Detailed patterns in `.omp/skills/pike-language-reference/references/stdlib-patterns.md` (1200+ lines). Key modules covered:
+Detailed patterns in `.agents/skills/pike-language-reference/references/stdlib-patterns.md` (1200+ lines). Key modules covered:
 
 - **File I/O**: Stdio.File, Stdio.read_file, Stdio.Buffer, Stdio.Port
 - **HTTP**: Protocols.HTTP (sync/async), Protocols.HTTP.Server

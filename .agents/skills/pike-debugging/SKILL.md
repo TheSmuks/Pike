@@ -1,6 +1,7 @@
 ---
 name: pike-debugging
 description: Debugging Pike programs and interpreter using built-in tools, error handling, and GC introspection
+
 globs:
   - "**/*.pike"
   - "**/*.pmod"

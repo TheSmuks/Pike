@@ -143,4 +143,4 @@ The master object (lib/master.pike.in) handles module resolution and autoloading
 |Thread|Threading primitives (Thread, Mutex, Condition, Local, Farm, Queue)|
 |Val|Singleton objects: Val.true, Val.false, Val.null|
 
-Detailed patterns: `.omp/skills/pike-language-reference/references/stdlib-patterns.md` (1247 lines).
+Detailed patterns: `.agents/skills/pike-language-reference/references/stdlib-patterns.md` (1247 lines).

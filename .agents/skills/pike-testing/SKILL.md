@@ -1,6 +1,7 @@
 ---
 name: pike-testing
 description: Writing and running Pike tests using the m4-based test DSL and test infrastructure
+
 globs:
   - "**/testsuite.in"
   - "**/test_*"

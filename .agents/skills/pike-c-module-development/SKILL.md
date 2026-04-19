@@ -1,6 +1,7 @@
 ---
 name: pike-c-module-development
 description: Writing native C modules for Pike using .cmod files, svalue stack, and GC-safe patterns
+
 globs:
   - "**/*.cmod"
   - "src/modules/**"

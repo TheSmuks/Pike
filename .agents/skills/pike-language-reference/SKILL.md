@@ -1,6 +1,7 @@
 ---
 name: pike-language-reference
 description: Pike programming language syntax, semantics, type system, and standard library patterns for correct code generation
+
 globs:
   - "**/*.pike"
   - "**/*.pmod"

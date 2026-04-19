@@ -1,6 +1,7 @@
 ---
 name: pike-build-system
 description: Building Pike from source, configure options, module builds, and troubleshooting
+
 globs:
   - Makefile
   - "**/Makefile"
@@ -31,12 +32,12 @@ Pike uses an autoconf-based build system with a meta-Makefile at the repository 
 
 The top-level Makefile handles configure, build directory setup, and module resolution. Running make inside `src/` skips these steps and produces an incomplete or broken build.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 cd src && ./configure && make
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 make CONFIGUREARGS="--prefix=/opt/pike"
 ```
@@ -45,13 +46,13 @@ make CONFIGUREARGS="--prefix=/opt/pike"
 
 If configure cannot find a library (MySQL, GMP, etc.), it disables that module without failing the build. Check configure output for "checking for..." lines to see what was detected.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 # Build succeeds, then wondering why Mysql module is missing
 pike -e 'Sql.Sql; // Error: no Mysql support'
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 # Verify module availability after build
 pike -e 'foreach(indices(master()->resolv("Mysql")), m) werror("%O\n", m)'
@@ -63,12 +64,12 @@ make CONFIGUREARGS="--with-mysql" 2>&1 | grep -i mysql
 
 The meta-Makefile wraps the configure step. Flags must go through `CONFIGUREARGS` so the meta-Makefile forwards them correctly.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 ./configure --with-debug
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 make CONFIGUREARGS="--with-debug"
 ```
@@ -77,12 +78,12 @@ make CONFIGUREARGS="--with-debug"
 
 Parallelism is not enabled by default. Pass `-j` through `MAKE_PARALLEL` to utilize multiple cores.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 make -j$(nproc)
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 make MAKE_PARALLEL="-j$(nproc)"
 ```
@@ -91,13 +92,13 @@ make MAKE_PARALLEL="-j$(nproc)"
 
 The build tree contains generated files that simple `rm` or `make clean` may not fully remove. Use `make spotless` to reset to a pristine state.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 rm -rf build/
 make clean
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 make spotless
 ```
@@ -106,12 +107,12 @@ make spotless
 
 After a successful build, the Pike executable is at `build/<os-arch>/pike`, not in `src/` or the repo root.
 
-**WRONG:**
+**WRONG:**"
 ```bash
 ./pike --version
 ```
 
-**CORRECT:**
+**CORRECT:**"
 ```bash
 build/linux-x86_64/pike --version
 # or after install:
